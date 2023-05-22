@@ -1,0 +1,43 @@
+22:46:54 **** Incremental Build of configuration Debug for project Calculator ****
+make all 
+Building file: ../Calculator.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"Calculator.d" -MT"Calculator.o" -c -o "Calculator.o" "../Calculator.c"
+In file included from ../Calculator.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Calculator.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+In file included from ../keypad.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../keypad.c
+ 
+Building target: Calculator.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Calculator.map -mmcu=atmega32 -o "Calculator.elf"  ./Calculator.o ./gpio.o ./keypad.o ./lcd.o   
+Finished building target: Calculator.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Calculator.elf  >"Calculator.lss"
+Finished building: Calculator.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Calculator.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9472 bytes (28.9% Full)
+(.text + .data + .bootloader)
+
+Data:        100 bytes (4.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:46:55 Build Finished. 0 errors, 2 warnings. (took 1s.35ms)
+

@@ -1,0 +1,40 @@
+18:37:48 **** Build of configuration Debug for project standard_calc ****
+make all 
+Building file: ../standard_calc.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"standard_calc.d" -MT"standard_calc.o" -c -o "standard_calc.o" "../standard_calc.c"
+In file included from ../standard_calc.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../standard_calc.c
+ 
+Building target: standard_calc.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,standard_calc.map -mmcu=atmega32 -o "standard_calc.elf"  ./gpio.o ./keypad.o ./lcd.o ./standard_calc.o   
+Finished building target: standard_calc.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S standard_calc.elf  >"standard_calc.lss"
+Finished building: standard_calc.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex standard_calc.elf  "standard_calc.hex"
+Finished building: standard_calc.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 standard_calc.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9224 bytes (28.1% Full)
+(.text + .data + .bootloader)
+
+Data:        100 bytes (4.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:37:48 Build Finished. 0 errors, 1 warnings. (took 851ms)
+
